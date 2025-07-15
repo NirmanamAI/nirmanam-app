@@ -29,6 +29,44 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## Development
+
+This project uses [Ultracite](https://ultracite.dev) for lightning-fast formatting and linting with zero configuration.
+
+### Available Scripts
+
+- `pnpm dev` - Start development server with Turbopack
+- `pnpm build` - Build the application for production
+- `pnpm start` - Start production server
+- `pnpm lint` - Run Ultracite linter
+- `pnpm lint:fix` - Run Ultracite linter and fix issues
+- `pnpm format` - Format code with Ultracite
+- `pnpm format:check` - Check code formatting without making changes
+- `pnpm type-check` - Run TypeScript type checking
+- `pnpm ci` - Run all checks (format, lint, type-check, build)
+
+### Pre-commit Hooks
+
+This project uses Husky and lint-staged to automatically format code before commits.
+
+## CI/CD
+
+This project includes GitHub Actions workflows for continuous integration and deployment:
+
+### CI Workflow (`.github/workflows/ci.yml`)
+- Runs on push to `main`/`develop` branches and pull requests
+- Installs dependencies with pnpm
+- Checks code formatting with Ultracite
+- Runs linting with Ultracite
+- Performs TypeScript type checking
+- Builds the application
+- Uploads build artifacts
+
+### Deploy Workflow (`.github/workflows/deploy.yml`)
+- Runs on push to `main` branch or manual trigger
+- Includes all CI checks
+- Ready for deployment configuration (Vercel, Netlify, etc.)
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.

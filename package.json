@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "npx ultracite lint",
+    "format": "npx ultracite format",
+    "type-check": "tsc --noEmit",
+    "code-quality": "pnpm lint && pnpm type-check"
   },
   "dependencies": {
     "next": "15.3.5",
