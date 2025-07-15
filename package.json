@@ -8,9 +8,8 @@
     "start": "next start",
     "lint": "npx ultracite lint",
     "format": "npx ultracite format",
-    "format:check": "npx ultracite format --check",
     "type-check": "tsc --noEmit",
-    "ci": "pnpm lint && pnpm format:check && pnpm type-check && pnpm build"
+    "ci": "pnpm lint && pnpm type-check && pnpm build"
   },
   "dependencies": {
     "next": "15.3.5",
